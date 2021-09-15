@@ -1,0 +1,21 @@
+name: Tests
+on: [push]
+
+jobs:
+  test:
+    name: Terst
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Unit Tests
+        run: yarn test --watchAll=false
+
+      - name: E2E Tests
+        uses: cypress-io/github-action@v2
+        with:
+          run: yarn e2e:headless
