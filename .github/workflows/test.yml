@@ -18,4 +18,4 @@ jobs:
       - name: E2E Tests
         uses: cypress-io/github-action@v2
         with:
-          run: yarn e2e:headless
+          start: yarn e2e:headless
