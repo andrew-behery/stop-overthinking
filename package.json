@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "cypress": "cypress open"
+    "test": "jest --watchAll=false",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -15,6 +19,9 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "babel-jest": "^27.2.0",
     "cypress": "^8.4.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
@@ -22,6 +29,9 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.0"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.0",
+    "prettier": "^2.4.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
